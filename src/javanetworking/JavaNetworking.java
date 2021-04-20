@@ -20,10 +20,15 @@ public class JavaNetworking {
         // TODO code application logic here
         
         HttpClientTask clientTask = new HttpClientTask();
+        InetAddressTask inetTask = new InetAddressTask();
         
         clientTask.sendGetRequest();
         System.out.println("\n\n");
         clientTask.sendPostRequest();
+        System.out.println("\n\n");
+        inetTask.tryFindOutTheHostname();
+        System.out.println("\n\n");
+        inetTask.tryGetAllByName();
         
     }
     
