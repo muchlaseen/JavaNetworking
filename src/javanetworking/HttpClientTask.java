@@ -53,12 +53,11 @@ public class HttpClientTask {
         }
     }
 
-    public void sendPostRequest() throws IOException {
+    public String sendPostRequest(String url) throws IOException {
 
         System.out.println("PHRASE 2 : HTTP POST Request\n");
 
         String result = "";
-        String url = "https://jedangoding.com/api/post/save";
         HttpPost post = new HttpPost(url);
 
         StringBuilder json = new StringBuilder();
@@ -80,9 +79,9 @@ public class HttpClientTask {
             System.out.println("Response Code: " + response.getStatusLine().getStatusCode());
 
             result = EntityUtils.toString(response.getEntity());
-            System.out.println(result);
+            
         }
 
-        
+        return result;
     }
 }
